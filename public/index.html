@@ -17,16 +17,25 @@
       <button id="openModal"> Login / Register </a>
 <!-- modal -->
       <div id="modal">
-        <div id="modal-register"
-
+        <div id="modal-register">
           <h1>Register</h1>
-          <form ng-submit="auth.createUser()">
-            <input type="text" placeholder="username" ng-model="auth.username"/>
-            <input type="password" placeholder="password" ng-model="auth.password"/>
+          <form ng-submit="ctrl.createUser()">
+            <input type="text" placeholder="username" ng-model="ctrl.username"/>
+            <input type="password" placeholder="password" ng-model="ctrl.password"/>
             <input type="submit" value="Create Account">
           </form>
-          <a id="closeModal" href="#">Close</a>
         </div>
+
+        <div id="modal-login">
+          <h1>Log In</h1>
+            <form ng-submit="ctrl.logIn()">
+              <input type="text" placeholder="username" ng-model="ctrl.username"/>
+              <input type="text" placeholder="password" ng-model="ctrl.password"/>
+              <input type="submit" value="Log In">
+            </form>
+        </div>
+        
+        <a id="close" href="#">Close</a>
       </div>
 
     </nav>

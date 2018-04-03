@@ -28,6 +28,21 @@ this.getPets = function(){
   })
 }
 
+//*****testing register/login******
+  // this.createUser = function(){
+  //   $http({
+  //     method:'POST',
+  //     url: '/',
+  //     data: {
+  //       username: this.username,
+  //       password: this.password
+  //     }
+  //   }).then(function(response){
+  //     console.log(response);
+  //   }, function(){
+  //     console.log('error');
+  //   });
+  // }
 
 }]) //closes app.controller
 
@@ -43,7 +58,7 @@ const $openBtn = $('#openModal');
 const $modal = $('#modal');
 
 //grabbing close button
-const $closeBtn = $('#closeModal');
+const $closeBtn = $('#close');
 
 
 //event handlers
