@@ -29,10 +29,35 @@ this.getPets = function(){
 }
 
 
-
-
-
-
-
-
 }]) //closes app.controller
+
+
+//******modal*******
+
+$( ()=>{
+
+//grabbing the login/register button
+const $openBtn = $('#openModal');
+
+//grabbing modal elememnt
+const $modal = $('#modal');
+
+//grabbing close button
+const $closeBtn = $('#closeModal');
+
+
+//event handlers
+const openModal = ()=>{
+  $modal.css('display', 'block');
+}
+
+const closeModal =()=>{
+  $modal.css('display', 'none');
+}
+
+//event listeners
+$openBtn.on('click', openModal);
+
+$closeBtn.on('click', closeModal);
+
+}); //
