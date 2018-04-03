@@ -28,21 +28,50 @@ this.getPets = function(){
   })
 }
 
-//*****testing register/login******
-  // this.createUser = function(){
-  //   $http({
-  //     method:'POST',
-  //     url: '/',
-  //     data: {
-  //       username: this.username,
-  //       password: this.password
-  //     }
-  //   }).then(function(response){
-  //     console.log(response);
-  //   }, function(){
-  //     console.log('error');
-  //   });
-  // }
+// *****testing register/login******
+  this.createUser = function(){
+    $http({
+      method:'POST',
+      url: '/users',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then(function(response){
+      console.log(response);
+    }, function(){
+      console.log('error');
+    });
+  }
+
+  this.logIn = function(){
+    $http({
+      method: 'POST',
+      url:'/sessions',
+      data: {
+        username: this.loginUsername,
+        password: this.loginassword
+      }
+    }).then(function(response){
+      controller.loggedinUsername = response.data.loginUsername;
+      console.log(response);
+    }, function(){
+      console.log('error');
+    })
+  }
+
+  this.logOut = function(){
+    $http({
+      method: 'DELETE',
+      url: '/sessions'
+    }).then(function(response){
+      console.log(response);
+    }, function(){
+      console.log('error');
+    })
+  }
+
+  this.getPets();
 
 }]) //closes app.controller
 
