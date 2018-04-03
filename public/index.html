@@ -9,8 +9,17 @@
   </head>
   <body ng-controller="MainController as ctrl">
     {{ctrl.appName}}
+  <div class="login">
 
-    <h2>Add Pet Here:</h2>
+    <nav>
+      <ul>
+        <li> <a href="/sessions/new">Log In</a> </li>
+        <li> <a href="/users/new">Register</a> </li>
+      </ul>
+    </nav>
+  </div>
+
+    <h2>Search for your new pet:</h2>
     <div class="form">
       <form name="getPets" ng-submit="ctrl.getPets()">
         <input type="text" placeholder="pet type" ng-model="ctrl.animal"/>
