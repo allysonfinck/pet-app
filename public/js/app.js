@@ -19,9 +19,9 @@ this.getPets = function(){
   $http({
     method:'GET',
     url: this.searchURL + this.getPets
-  }).then (response => {
-    this.pets = response.data ;
-  }, error =>{
+  }).then((response) => {
+    this.pets = response.data.Search;
+  }, (error) =>{
     console.error( error );
   }).catch (error => {
     console.error('Catch:', error)
@@ -50,7 +50,7 @@ this.getPets = function(){
       url:'/sessions',
       data: {
         username: this.loginUsername,
-        password: this.loginassword
+        password: this.loginPassword
       }
     }).then(function(response){
       controller.loggedinUsername = response.data.loginUsername;
