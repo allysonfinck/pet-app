@@ -3,21 +3,43 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <title></title>
   </head>
   <body ng-controller="MainController as ctrl">
     {{ctrl.appName}}
-  <div class="login">
+
 
     <nav>
-      <ul>
-        <li> <a href="/sessions/new">Log In</a> </li>
-        <li> <a href="/users/new">Register</a> </li>
-      </ul>
+
+      <button id="openModal"> Login / Register </a>
+<!-- modal -->
+      <div id="modal">
+        <div id="modal-register">
+          <h1>Register</h1>
+          <form ng-submit="ctrl.createUser()">
+            <input type="text" placeholder="username" ng-model="ctrl.username"/>
+            <input type="password" placeholder="password" ng-model="ctrl.password"/>
+            <input type="submit" value="Create Account">
+          </form>
+        </div>
+
+        <div id="modal-login">
+          <h1>Log In</h1>
+            <form ng-submit="ctrl.logIn()">
+              <input type="text" placeholder="username" ng-model="ctrl.username"/>
+              <input type="text" placeholder="password" ng-model="ctrl.password"/>
+              <input type="submit" value="Log In">
+            </form>
+        </div>
+        
+        <a id="close" href="#">Close</a>
+      </div>
+
     </nav>
-  </div>
+
 
     <h2>Search for your new pet:</h2>
     <div class="form">

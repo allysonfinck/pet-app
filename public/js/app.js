@@ -28,11 +28,51 @@ this.getPets = function(){
   })
 }
 
-
-
-
-
-
-
+//*****testing register/login******
+  // this.createUser = function(){
+  //   $http({
+  //     method:'POST',
+  //     url: '/',
+  //     data: {
+  //       username: this.username,
+  //       password: this.password
+  //     }
+  //   }).then(function(response){
+  //     console.log(response);
+  //   }, function(){
+  //     console.log('error');
+  //   });
+  // }
 
 }]) //closes app.controller
+
+
+//******modal*******
+
+$( ()=>{
+
+//grabbing the login/register button
+const $openBtn = $('#openModal');
+
+//grabbing modal elememnt
+const $modal = $('#modal');
+
+//grabbing close button
+const $closeBtn = $('#close');
+
+
+//event handlers
+const openModal = ()=>{
+  $modal.css('display', 'block');
+}
+
+const closeModal =()=>{
+  $modal.css('display', 'none');
+}
+
+//event listeners
+$openBtn.on('click', openModal);
+
+$closeBtn.on('click', closeModal);
+
+}); //
