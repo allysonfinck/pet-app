@@ -12,24 +12,30 @@
 
     <h2>Add Pet Here:</h2>
     <div class="form">
+      <form name="getPets" ng-submit="ctrl.getPets()">
+        <input type="text" placeholder="pet type" ng-model="ctrl.animal"/>
+        <input type="text" placeholder="breed" ng-model="ctrl.breed"/>
+        <input type="text" placeholder="size" ng-model="ctrl.size"/>
+        <input type="text" placeholder="sex" ng-model="ctrl.sex"/>
+        <input type="text" placeholder="location" ng-model="ctrl.location"/>
+        <input type="text" placeholder="age" ng-model="ctrl.age"/>
 
-      <form ng-submit="ctrl.createPets()">
-        Animal:<input type="text" ng-model="ctrl.animal"/> </br>
-        Breed:<input type="text" ng-model="ctrl.breed"/> </br>
-        Size:<input type="text" ng-model="ctrl.size"/> </br>
-        Sex:<input type="text" ng-model="ctrl.sex"/> </br>
-        Location:<input type="text" ng-model="ctrl.location"/> </br>
-        Age:<input type="text" ng-model="ctrl.age"/> </br>
-        <input type="submit" value="Create Pet">
+        <button type="submit">FIND YOUR PET</button>
 
       </form>
+
     </div>
 
     <h2>Available Pets</h2>
     <div class="petsList" >
       <ul>
         <li ng-repeat="pets in ctrl.pets">
-          {{pets.animal}}
+          <h2>{{pets.animal}}</h2>
+          <h3>Breed: </h3>
+          <h3>Size: </h3>
+          <h3>Sex: </h3>
+          <h3>Location: </h3>
+          <h3>Age: </h3>
         </li>
       </ul>
 

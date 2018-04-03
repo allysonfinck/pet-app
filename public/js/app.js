@@ -3,39 +3,31 @@ const app = angular.module('PetApp', []);
 app.controller('MainController', ['$http', function($http){
   const controller = this;
 
-  this.appName = 'Pet Finder'
+  this.appName = 'Pet Finder';
+
+  this.pets = [];
+
+  this.baseURL = 'http://api.petfinder.com/my.method?key=12345&arg1=foo';
+  this.apikey = 'apikey=' + 'd9f0af5e7a062cb5c0fec14bb266231b';
+  this.query = '';
+  //idk what this.query should be
+  this.getPets = '';
+  this.searchURL = this.baseURL + this.apikey + '&' + this.query ;
 
 
 this.getPets = function(){
   $http({
     method:'GET',
-    url:'/pets',
-  }).then(function(response){
-    controller.pets = response.data
-  }, function(){
-    console.log('error');
+    url: this.searchURL + this.getPets
+  }).then (response => {
+    this.pets = response.data ;
+  }, error =>{
+    console.error( error );
+  }).catch (error => {
+    console.error('Catch:', error)
   })
 }
-this.getPets();
 
-this.createPets = function(){
-  $http({
-    method:'POST',
-    url:'/pets',
-    data:{
-      animal: this.animal,
-      breed: this.breed,
-      size: this.size,
-      sex: this.sex,
-      location: this.location,
-      age: this.age
-    }
-  }).then(function(response){
-    controller.getPets();
-  }, function(){
-    console.log('error');
-  })
-}
 
 
 
