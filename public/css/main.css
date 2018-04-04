@@ -1,3 +1,51 @@
-* {
+body {
   background-color: lightblue;
+  font-family: 'Lobster', cursive;
+}
+
+
+#modal {
+  display: none;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: auto;
+}
+
+.tagline {
+  position: absolute;
+  top: 18px;
+  left: 50px;
+  color: gray;
+  font-size: 34px;
+  transform: translate(-10%, -10%);
+}
+
+.modal-button{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.modal-button:hover {
+  background-color: navy;
 }

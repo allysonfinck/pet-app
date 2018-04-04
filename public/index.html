@@ -3,11 +3,96 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <title></title>
   </head>
+  <div class="container">
+
+    <div class="header">
+      <img src="img/Ru.JPG" alt="pets" width="100%">
+      <div class="tagline">Find Your New Best Friend</div>
+
+      <div class="modal-button">
+        <button id="openModal"> Login / Register </a>
+      </div>
+
   <body ng-controller="MainController as ctrl">
     {{ctrl.appName}}
+
+    <p>Welcome, {{ctrl.currentuser}}</p>
+
+
+    <nav>
+
+
+
+<!-- modal -->
+      <div id="modal">
+          <a id="close" href="#">Close</a>
+
+        <div id="modal-register">
+          <h1>Register</h1>
+          <form ng-submit="ctrl.createUser()">
+            <input type="text" placeholder="username" ng-model="ctrl.username"/>
+            <input type="password" placeholder="password" ng-model="ctrl.password"/>
+            <input type="submit" value="Create Account">
+          </form>
+        </div>
+
+        <div id="modal-login">
+          <h1>Log In</h1>
+            <form ng-submit="ctrl.logIn()">
+              <input type="text" placeholder="username" ng-model="ctrl.loginUsername"/>
+              <input type="password" placeholder="password" ng-model="ctrl.loginPassword"/>
+              <input type="submit" value="Log In">
+            </form>
+        </div>
+
+
+      </div>
+</div>
+    </nav>
+
+
+
+
+
+    <h2>Search for your new pet:</h2>
+    <div class="form">
+      <form name="getPets" ng-submit="ctrl.getPets()">
+        <input type="text" placeholder="pet type" ng-model="ctrl.animal"/>
+        <input type="text" placeholder="breed" ng-model="ctrl.breed"/>
+        <input type="text" placeholder="size" ng-model="ctrl.size"/>
+        <input type="text" placeholder="sex" ng-model="ctrl.sex"/>
+        <input type="text" placeholder="location" ng-model="ctrl.location"/>
+        <input type="text" placeholder="age" ng-model="ctrl.age"/>
+
+        <button type="submit">FIND YOUR PET</button>
+
+      </form>
+
+    </div>
+
+    <h2>Available Pets</h2>
+    <div class="petsList" >
+      <ul>
+        <li ng-repeat="pets in ctrl.pets">
+          <h2>{{pets.animal}}</h2>
+          <h3>Breed: </h3>
+          <h3>Size: </h3>
+          <h3>Sex: </h3>
+          <h3>Location: </h3>
+          <h3>Age: </h3>
+        </li>
+      </ul>
+
+
+    </div>
+
   </body>
+
+</div>
 </html>
