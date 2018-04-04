@@ -94,9 +94,12 @@ const openModal = ()=>{
   $modal.css('display', 'block');
 }
 
-const closeModal =()=>{
+const closeModal = ()=>{
+  // console.log('close modal test');
   $modal.css('display', 'none');
 }
+
+
 
 //event listeners
 $openBtn.on('click', openModal);
