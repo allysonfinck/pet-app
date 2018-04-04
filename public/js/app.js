@@ -7,7 +7,7 @@ app.controller('MainController', ['$http', function($http){
 
   this.pets = [];
 
-  this.baseURL = 'http://api.petfinder.com/pet.findPets?key=d9f0af5e7a062cb5c0fec14bb266231b&arg1=';
+  this.baseURL = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940';
 
   this.query = '';
 
@@ -15,11 +15,15 @@ app.controller('MainController', ['$http', function($http){
 
 
 this.getPets = function(){
+  const url = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940&format=json';
+// const url = this.searchURL + this.query + '&format=json';
+console.log(url);
   $http({
     method:'GET',
-    url: this.searchURL + this.query
+    url: url
   }).then((response) => {
-    this.pets = response.data;
+    console.log(response.data);
+    // this.pets = response.data;
   }, (error) =>{
     console.error( error );
   }).catch (error => {

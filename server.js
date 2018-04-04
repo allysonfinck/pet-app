@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const session = require('express-session');
 
@@ -21,7 +21,9 @@ app.use('/sessions', sessionsController);
 const petsController = require('./controllers/pets.js');
 app.use('/pets', petsController);
 
-mongoose.connect('mongodb://localhost:27017/petapp');
+
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/petapp');
 mongoose.connection.once('open', ()=>{
   console.log('connected to mongod');
 })
