@@ -16,19 +16,23 @@ app.controller('MainController', ['$http', function($http){
 
 this.getPets = function(){
   const url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&location=10940&format=json';
+  const trustedUrl = $sce.trustAsResourceUrl(url);
 // const url = this.searchURL + this.query + '&format=json';
-console.log(url);
-  $http({
-    method:'GET',
-    url: url
-  }).then((response) => {
-    console.log(response.data);
-    // this.pets = response.data;
-  }, (error) =>{
-    console.error( error );
-  }).catch (error => {
-    console.error('Catch:', error)
-  })
+  $http.jsonp(trustedUrl, jsonPCallbackPAram: 'callback'})
+    .then(function(data){
+      console.log(data.found);
+    })
+  // $http({
+  //   method:'GET',
+  //   url: url
+  // }).then((response) => {
+  //   console.log(response.data);
+  //   // this.pets = response.data;
+  // }, (error) =>{
+  //   console.error( error );
+  // }).catch (error => {
+  //   console.error('Catch:', error)
+  // })
 }
 
 // *****testing register/login******
