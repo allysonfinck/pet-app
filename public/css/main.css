@@ -1,12 +1,23 @@
 body {
   background-color: lightblue;
   font-family: 'Lobster', cursive;
+
 }
 
 
 #modal {
+  background-color: rgba(0,0,0,0.3);
+  width: 400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: auto;
+
   display: none;
-  cursor: pointer;
+
 }
 
 .container {
@@ -25,8 +36,8 @@ body {
   position: absolute;
   top: 18px;
   left: 50px;
-  color: gray;
-  font-size: 34px;
+  color: black;
+  font-size: 42px;
   transform: translate(-10%, -10%);
 }
 
@@ -36,8 +47,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
-  color: white;
+  background-color: rgba(0,0,0,0.3);
+  color: lightblue;
   font-size: 16px;
   padding: 12px 24px;
   border: none;
@@ -47,5 +58,31 @@ body {
 }
 
 .modal-button:hover {
-  background-color: navy;
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+input {
+  width: auto;
+  padding: 8px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: solid black 1px;
+
+}
+
+.form input{
+  display: block;
+  border: solid black 3px;
+}
+
+
+.credits h1 {
+  font-size: 15px;
+}
+.credits img{
+   vertical-align: middle;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
 }
