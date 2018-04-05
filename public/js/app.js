@@ -18,7 +18,7 @@ this.getPets = function(){
   const url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&location=10940&format=json';
   const trustedUrl = $sce.trustAsResourceUrl(url);
 // const url = this.searchURL + this.query + '&format=json';
-  $http.jsonp(trustedUrl, jsonPCallbackPAram: 'callback'})
+  $http.jsonp(trustedUrl, {jsonPCallbackPAram: 'callback'})
     .then(function(data){
       console.log(data.found);
     })
