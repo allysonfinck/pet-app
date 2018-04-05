@@ -68,7 +68,6 @@ input {
   margin: 8px 0;
   box-sizing: border-box;
   border: solid black 1px;
-
 }
 
 .form input{
@@ -76,10 +75,18 @@ input {
   border: solid black 3px;
 }
 
+.searchBtn {
+  width: auto;
+  padding: 8px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid black;
+}
 
 .credits h1 {
   font-size: 15px;
 }
+
 .credits img{
    vertical-align: middle;
    width: 50px;
@@ -88,6 +95,10 @@ input {
 }
 
 /* display pets */
+.petGridTitle {
+  text-align: center;
+}
+
 .petGrid {
   display: flex;
   flex-direction: row;
@@ -119,4 +130,11 @@ input {
 
 .petCard h4 {
   margin: 2px;
+}
+
+/* FOOTER */
+footer {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }

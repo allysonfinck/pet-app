@@ -21,13 +21,18 @@
           <button id="openModal"> Login / Register </a>
         </div>
 
-
-    <p>Welcome, {{ctrl.currentuser}}</p>
-
-
+        <div class="form">
+          <form name="getPets" ng-submit="ctrl.getPets()">
+            <input type="text" placeholder="pet type" ng-model="ctrl.animal"/>
+            <input type="text" placeholder="breed" ng-model="ctrl.breed"/>
+            <input type="text" placeholder="size" ng-model="ctrl.size"/>
+            <input type="text" placeholder="sex" ng-model="ctrl.sex"/>
+            <input type="text" placeholder="location" ng-model="ctrl.location"/>
+            <input type="text" placeholder="age" ng-model="ctrl.age"/>
+            <button class="searchBtn" type="submit">SEARCH</button>
+          </form>
+        </div>
     <nav>
-
-
 
 <!-- modal -->
       <div id="modal">
@@ -57,26 +62,7 @@
     </nav>
 
 
-
-
-
-    <h2>Search for your new pet:</h2>
-    <div class="form">
-      <form name="getPets" ng-submit="ctrl.getPets()">
-        <input type="text" placeholder="pet type" ng-model="ctrl.animal"/>
-        <input type="text" placeholder="breed" ng-model="ctrl.breed"/>
-        <input type="text" placeholder="size" ng-model="ctrl.size"/>
-        <input type="text" placeholder="sex" ng-model="ctrl.sex"/>
-        <input type="text" placeholder="location" ng-model="ctrl.location"/>
-        <input type="text" placeholder="age" ng-model="ctrl.age"/>
-
-        <button type="submit">FIND YOUR PET</button>
-
-      </form>
-
-    </div>
-
-    <h2>Available Pets</h2>
+    <h1 class="petGridTitle">Available Pets</h1>
     <div class="petGrid">
       <div ng-repeat="pet in ctrl.pets" class="petCard">
         <img ng-src="{{pet.media.photos.photo[0].$t}}" alt="{{pet.name.$t}}">
@@ -94,14 +80,14 @@
 
 </div>
 
-<footer>
-<div class="credits">
-  <h1>Created by:</h1>
-  <a href="https://github.com/nataliewolff20" target="_blank">
-  <img src="img/nat.jpg" alt="nat"></a>
+  <footer>
+    <div class="credits">
+      <h1>Created by:</h1>
+      <a href="https://github.com/nataliewolff20" target="_blank">
+      <img src="img/nat.jpg" alt="nat"></a>
 
-  <a href="https://github.com/allysonfinck" target="_blank">
-  <img src="https://i.imgur.com/SiyCgW4.jpg" alt="allyson"></a>
-</div>
-</footer>
+      <a href="https://github.com/allysonfinck" target="_blank">
+      <img src="https://i.imgur.com/SiyCgW4.jpg" alt="allyson"></a>
+    </div>
+  </footer>
 </html>
