@@ -7,20 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
-    <title></title>
+    <title>The Pet Project</title>
   </head>
-  <div class="container">
 
-    <div class="header">
-      <img src="https://i.imgur.com/nTGswxr.jpg" alt="pets" width="100%">
-      <div class="tagline">Find Your New Best Friend</div>
-
-      <div class="modal-button">
-        <button id="openModal"> Login / Register </a>
-      </div>
 
   <body ng-controller="MainController as ctrl">
-    {{ctrl.appName}}
+
+    <div class="container">
+      <div class="header">
+        <img src="https://i.imgur.com/nTGswxr.jpg" alt="pets" width="100%">
+        <div class="tagline">Find Your New Best Friend</div>
+        <div class="modal-button">
+          <button id="openModal"> Login / Register </a>
+        </div>
+
 
     <p>Welcome, {{ctrl.currentuser}}</p>
 
@@ -77,17 +77,15 @@
     </div>
 
     <h2>Available Pets</h2>
-    <div class="petsList" >
-      <ul>
-        <li ng-repeat="pets in ctrl.pets">
-          <h2>{{pets.animal}}</h2>
-          <h3>Breed: </h3>
-          <h3>Size: </h3>
-          <h3>Sex: </h3>
-          <h3>Location: </h3>
-          <h3>Age: </h3>
-        </li>
-      </ul>
+    <div class="petGrid">
+      <div ng-repeat="pet in ctrl.pets" class="petCard">
+        <img ng-src="{{pet.media.photos.photo[0].$t}}" alt="{{pet.name.$t}}">
+        <h2>{{pet.name.$t}}</h2>
+        <h4>{{pet.breeds.breed.$t}}</h4>
+        <h4>Age: {{pet.age.$t}}</h4>
+        <h4>Size: {{pet.size.$t}}</h3>
+        <h4>Gender: {{pet.sex.$t}}</h4>
+      </div>
 
 
     </div>
