@@ -21,7 +21,7 @@ this.getPets = ['$sce', function($sce){
   $http.jsonp(trustedUrl, {jsonPCallbackPAram: 'callback'})
     .then(function(data){
       console.log(data.found);
-    })]
+    })
   // $http({
   //   method:'GET',
   //   url: url
@@ -33,7 +33,7 @@ this.getPets = ['$sce', function($sce){
   // }).catch (error => {
   //   console.error('Catch:', error)
   // })
-}
+}]
 
 // *****testing register/login******
   this.createUser = function(){
