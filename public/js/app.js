@@ -15,7 +15,7 @@ app.controller('MainController', ['$http', function($http){
 
 
 this.getPets = function(){
-  const url = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940&format=json&callback=?';
+  const url = 'https://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940&format=json&callback=?';
 // const url = this.searchURL + this.query + '&format=json';
 console.log(url);
   $http({
