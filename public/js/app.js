@@ -14,7 +14,7 @@ app.controller('MainController', ['$http', function($http){
   this.searchURL = this.baseURL;
 
 
-this.getPets = ['$sce', function($sce){
+this.getPets = ['$sce', function(){
   const url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&location=10940&format=json';
   const trustedUrl = $sce.trustAsResourceUrl(url);
 // const url = this.searchURL + this.query + '&format=json';
