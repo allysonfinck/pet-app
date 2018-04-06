@@ -1,9 +1,7 @@
 body {
   background-color: lightblue;
   font-family: 'Lobster', cursive;
-
 }
-
 
 #modal {
   background-color: rgba(0,0,0,0.3);
@@ -15,9 +13,7 @@ body {
   width: 100%;
   z-index: 1;
   overflow: auto;
-
   display: none;
-
 }
 
 .container {
@@ -94,7 +90,7 @@ input {
    border-radius: 50%;
 }
 
-/* display pets */
+/* DISPLAY PETS */
 .petGridTitle {
   text-align: center;
 }

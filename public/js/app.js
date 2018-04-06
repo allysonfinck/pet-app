@@ -2,17 +2,33 @@ const app = angular.module('PetApp', []);
 
 app.controller('MainController', ['$http', '$sce', function($http, $sce){
   const controller = this;
-
   this.appName = 'Pet Finder';
-
   this.pets = [];
-
   this.baseURL = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940';
-
-
   this.getPets = function(){
-    const url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&location=10940&format=json';
+    let url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&format=json';
+
+    if(this.location){
+      url += '&location=' + this.location;
+    }
+    if(this.animal){
+      url += '&animal=' + this.animal;
+    }
+    if(this.breed){
+      url += '&breed=' + this.breed;
+    }
+    if(this.size){
+      url += '&size=' + this.size;
+    }
+    if(this.sex){
+      url += '&sex=' + this.sex;
+    }
+    if(this.age){
+      url += '&age=' + this.age;
+    }
+
     const trustedUrl = $sce.trustAsResourceUrl(url);
+    console.log(trustedUrl);
 
     $http.jsonp(trustedUrl, {jsonpCallbackParam: 'callback'})
       .then(function(response){
@@ -64,7 +80,6 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
       })
     }
 
-    this.getPets();
 
   }]) //closes app.controller
 
