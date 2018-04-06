@@ -15,18 +15,25 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
       url += '&animal=' + this.animal;
     }
     if(this.breed){
-      url += '&breed=' + this.breed;
+      this.breed = this.breed.replace(/\s+/g, '');
+      url += '&breeds=' + this.breed;
     }
     if(this.size){
+      this.size = this.size.toUpperCase();
       url += '&size=' + this.size;
     }
     if(this.sex){
+      this.size = this.size.toUpperCase();
       url += '&sex=' + this.sex;
     }
     if(this.age){
+      if(this.age = 'baby'){
+        this.age = 'Baby';
+      }
       url += '&age=' + this.age;
     }
 
+    console.log(url);
     const trustedUrl = $sce.trustAsResourceUrl(url);
     console.log(trustedUrl);
 
