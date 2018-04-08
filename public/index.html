@@ -2,6 +2,7 @@
 <html ng-app="PetApp">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -13,52 +14,56 @@
 
   <body ng-controller="MainController as ctrl">
 
-    <div class="container">
-      <div class="header">
-        <img src="https://i.imgur.com/nTGswxr.jpg" alt="pets" width="100%">
-        <div class="tagline">Find Your New Best Friend</div>
-        <div class="modal-button">
-          <button id="openModal"> Login / Register </a>
-        </div>
+    <!-- INCLUDES -->
+  <div ng-include="'partials/nav.html'"></div>
 
-        <div class="form">
-          <form name="getPets" ng-submit="ctrl.getPets()">
-            <input type="text" placeholder="Zip" ng-model="ctrl.location"/>
-            <input type="text" placeholder="Pet" ng-model="ctrl.animal"/>
-            <input type="text" placeholder="Breed" ng-model="ctrl.breed"/>
-            <input type="text" placeholder="Size(S/M/L)" ng-model="ctrl.size"/>
-            <input type="text" placeholder="Sex(M/F)" ng-model="ctrl.sex"/>
-            <input type="text" placeholder="Age(Baby/Young/Adult/Senior)" ng-model="ctrl.age"/>
-            <button class="searchBtn" type="submit">SEARCH</button>
-          </form>
-        </div>
-    <nav>
+  <div class="container">
+    <div class="header">
+      <img src="https://i.imgur.com/nTGswxr.jpg" alt="pets" width="100%">
+
+      <div class="modal-button">
+        <button id="openModal"> Login / Register </a>
+      </div>
+
+      <div class="form">
+        <form name="getPets" ng-submit="ctrl.getPets()">
+          <input type="text" placeholder="Zip" ng-model="ctrl.location"/>
+          <input type="text" placeholder="Pet" ng-model="ctrl.animal"/>
+          <input type="text" placeholder="Breed" ng-model="ctrl.breed"/>
+          <input type="text" placeholder="Size(S/M/L)" ng-model="ctrl.size"/>
+          <input type="text" placeholder="Sex(M/F)" ng-model="ctrl.sex"/>
+          <input class="ageSearch" type="text" placeholder="Age(Baby/Young/Adult/Senior)" ng-model="ctrl.age"/>
+          <button class="searchBtn" type="submit">SEARCH</button>
+        </form>
+      </div>
+  <nav>
 
 <!-- modal -->
-      <div id="modal">
-          <a id="close" href="#">Close</a>
-
-        <div id="modal-register">
-          <h1>Register</h1>
-          <form ng-submit="ctrl.createUser()">
-            <input type="text" placeholder="username" ng-model="ctrl.username"/>
-            <input type="password" placeholder="password" ng-model="ctrl.password"/>
-            <input type="submit" value="Create Account">
-          </form>
-        </div>
-
-        <div id="modal-login">
-          <h1>Log In</h1>
-            <form ng-submit="ctrl.logIn()">
-              <input type="text" placeholder="username" ng-model="ctrl.loginUsername"/>
-              <input type="password" placeholder="password" ng-model="ctrl.loginPassword"/>
-              <input type="submit" value="Log In">
-            </form>
-        </div>
+<div id="modal">
 
 
-      </div>
+  <div id="modal-register">
+    <h1>Register</h1>
+    <form ng-submit="ctrl.createUser()">
+      <input type="text" placeholder="username" ng-model="ctrl.username"/>
+      <input type="password" placeholder="password" ng-model="ctrl.password"/>
+      <input type="submit" value="Create Account">
+    </form>
+  </div>
+
+  <div id="modal-login">
+    <h1>Log In</h1>
+      <form ng-submit="ctrl.logIn()">
+        <input type="text" placeholder="username" ng-model="ctrl.loginUsername"/>
+        <input type="password" placeholder="password" ng-model="ctrl.loginPassword"/>
+        <input type="submit" value="Log In">
+      </form>
+  </div>
+<a id="close" href="#">Close</a>
+
 </div>
+</div>
+
     </nav>
 
 
@@ -81,8 +86,11 @@
     <div ng-include="'partials/show.html'"></div>
   </div>
 
-
-
+  <!-- boostrap javascript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- end boostrap javascript -->
   </body>
 
 </div>

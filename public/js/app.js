@@ -5,9 +5,12 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
   this.appName = 'Pet Finder';
   this.pets = [];
   this.baseURL = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940';
+  this.currentUser = "";
+
+
+  // SEARCH FOR PETS
   this.getPets = function(){
     let url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&format=json';
-
     if(this.location){
       url += '&location=' + this.location;
     }
@@ -19,16 +22,40 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
       url += '&breeds=' + this.breed;
     }
     if(this.size){
+      if(this.size = 's'){
+        this.size = 'S';
+      }
+      if(this.size = 'm'){
+        this.size = 'M';
+      }
+      if(this.size = 'l'){
+        this.size = 'L';
+      }
       this.size = this.size.toUpperCase();
       url += '&size=' + this.size;
     }
     if(this.sex){
+      if(this.sex = 'm'){
+        this.sex = 'M';
+      }
+      if(this.sex = 'f'){
+        this.sex = 'F';
+      }
       this.size = this.size.toUpperCase();
       url += '&sex=' + this.sex;
     }
     if(this.age){
       if(this.age = 'baby'){
         this.age = 'Baby';
+      }
+      if(this.age = 'young'){
+        this.age = 'Young';
+      }
+      if(this.age = 'adult'){
+        this.age = 'Adult';
+      }
+      if(this.age = 'senior'){
+        this.age = 'Senior';
       }
       url += '&age=' + this.age;
     }
@@ -70,6 +97,7 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
         }
       }).then(function(response){
         controller.loggedinUsername = response.data.loginUsername;
+        this.currentUser = response.config.data.username;
         console.log(response);
       }, function(){
         console.log('error');

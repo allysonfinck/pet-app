@@ -1,0 +1,23 @@
+<div class="form">
+  <form name="getPets" ng-submit="ctrl.getPets()">
+    <input type="text" placeholder="Zip" ng-model="ctrl.location"/>
+    <input type="text" placeholder="Pet" ng-model="ctrl.animal"/>
+    <input type="text" placeholder="Breed" ng-model="ctrl.breed"/>
+    <input type="text" placeholder="Size(S/M/L)" ng-model="ctrl.size"/>
+    <input type="text" placeholder="Sex(M/F)" ng-model="ctrl.sex"/>
+    <input class="ageSearch" type="text" placeholder="Age(Baby/Young/Adult/Senior)" ng-model="ctrl.age"/>
+    <button class="searchBtn" type="submit">SEARCH</button>
+  </form>
+</div>
+
+<h1 class="petGridTitle">Available Pets</h1>
+<div class="petGrid">
+  <div ng-repeat="pet in ctrl.pets" class="petCard">
+    <img ng-src="{{pet.media.photos.photo[0].$t}}" alt="{{pet.name.$t}}">
+    <h2>{{pet.name.$t}}</h2>
+    <h4>{{pet.breeds.breed.$t}}</h4>
+    <h4>Age: {{pet.age.$t}}</h4>
+    <h4>Size: {{pet.size.$t}}</h3>
+    <h4>Gender: {{pet.sex.$t}}</h4>
+  </div>
+</div>
