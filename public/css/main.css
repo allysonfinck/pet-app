@@ -157,6 +157,11 @@ input {
 .showPage img {
   margin: 20px auto;
   border: solid black 2px;
+  border-radius: 5px;
+}
+
+.showPage button {
+  margin-bottom: 20px;
 }
 
 .infoBox {
@@ -177,6 +182,30 @@ input {
   height: 100%;
 }
 
+/* PROFILE PAGE */
+.profilePage{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin: 30px auto;
+}
+
+.leftProfilePage {
+  width: 48%;
+  height: 100%;
+}
+
+.rightProfilePage {
+  width: 48%;
+  height: 100%;
+}
+
+.profileImg {
+  margin: 20px auto;
+  width: 40%;
+  height: auto;
+}
 
 /* FOOTER */
 footer {

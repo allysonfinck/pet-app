@@ -6,6 +6,7 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
   this.pets = [];
   this.baseURL = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940';
   this.currentUser = "";
+  this.myPets = [];
 
   // INCLUDES
   this.include = 'partials/home.html';

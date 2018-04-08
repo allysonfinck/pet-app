@@ -15,10 +15,10 @@
   <div ng-repeat="pet in ctrl.pets" class="petCard">
     <img ng-src="{{pet.media.photos.photo[0].$t}}" alt="{{pet.name.$t}}">
     <h2>{{pet.name.$t}}</h2>
-    <h4>{{pet.breeds.breed.$t}}</h4>
-    <h4>Age: {{pet.age.$t}}</h4>
-    <h4>Size: {{pet.size.$t}}</h3>
-    <h4>Gender: {{pet.sex.$t}}</h4>
+    <h6>{{pet.breeds.breed.$t}}</h6>
+    <h6>Age: {{pet.age.$t}}</h6>
+    <h6>Size: {{pet.size.$t}}</h6>
+    <h6>Gender: {{pet.sex.$t}}</h6>
     <button ng-click="ctrl.changeInclude('show', pet)">Details</button>
   </div>
 </div>
