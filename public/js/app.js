@@ -9,8 +9,11 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
 
   // INCLUDES
   this.include = 'partials/home.html';
-  this.changeInclude = (page)=>{
+  this.changeInclude = (page, pet)=>{
+    console.log(this.pets);
+    this.currentPet = pet;
     this.include = 'partials/' + page + '.html';
+    console.log(this.currentPet);
   }
 
   // SEARCH FOR PETS

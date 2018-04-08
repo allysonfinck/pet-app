@@ -144,8 +144,30 @@ input {
 }
 
 /* show page */
-.show  {
+.show {
   display: none;
+}
+
+.showPage img {
+  margin: 20px auto;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 30%;
+  margin: 20px auto;
+}
+
+.leftInfoBox {
+  width: 50%;
+  height: 100%;
+}
+
+.rightInfoBox {
+  width: 50%;
+  height: 100%;
 }
 
 

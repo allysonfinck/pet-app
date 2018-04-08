@@ -1,10 +1,28 @@
-<div>
-  <h1>{{ctrl.pet.name.$t}}</h1>
+<div class="showPage">
 
-  <img ng-src="{{pet.media.photos.photo[0].$t}}" alt="{{pet.name.$t}}">
+  <img ng-src="{{ctrl.currentPet.media.photos.photo[2].$t}}" alt="{{pet.name.$t}}">
 
-  <h4>{{ctrl.pet.breeds.breed.$t}}</h4>
-  <h4>Age: {{pet.age.$t}}</h4>
-  <h4>Size: {{pet.size.$t}}</h3>
-  <h4>Gender: {{pet.sex.$t}}</h4>
+  <h1>{{ctrl.currentPet.name.$t}}</h1>
+
+  <h4>{{ctrl.currentPet.breeds.breed.$t}}</h4>
+  <h5>{{ctrl.currentPet.description.$t}}</h5>
+
+  <div class='infoBox'>
+    <div class="leftInfoBox">
+      <h6>Age: {{ctrl.currentPet.age.$t}}</h6>
+      <h6>Size: {{ctrl.currentPet.size.$t}}</h6>
+      <h6>Gender: {{ctrl.currentPet.sex.$t}}</h6>
+      <h6>{{ctrl.currentPet.options.option[0].$t}}</h6>
+      <h6>{{ctrl.currentPet.options.option[1].$t}}</h6>
+      <h6>{{ctrl.currentPet.options.option[2].$t}}</h6>
+    </div>
+    <div class="rightInfoBox">
+      <h5>Contact</h5>
+      <h6>Address: {{ctrl.currentPet.contact.address1.$t}}</h6>
+      <h6>City: {{ctrl.currentPet.contact.city.$t}}</h6>
+      <h6>State: {{ctrl.currentPet.contact.zip.$t}}, {{ctrl.currentPet.contact.state.$t}}</h6>
+      <h6>Phone: {{ctrl.currentPet.contact.phone.$t}}</h6>
+      <h6>Email: {{ctrl.currentPet.contact.email.$t}}</h6>
+    </div>
+  </div>
 </div>
