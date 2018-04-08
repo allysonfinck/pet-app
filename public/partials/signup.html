@@ -1,6 +1,10 @@
 <h1>Register</h1>
 <form ng-submit="ctrl.createUser()">
-  <input type="text" placeholder="username" ng-model="ctrl.username"/>
-  <input type="password" placeholder="password" ng-model="ctrl.password"/>
-  <input ng-click="ctrl.changeInclude('home')" type="submit" value="Create Account">
+  <input type="text" placeholder="Username" ng-model="ctrl.username"/>
+  <input type="password" placeholder="Password" ng-model="ctrl.password"/>
+  <input type="text" placeholder="First Name" ng-model="ctrl.firstName"/>
+  <input type="text" placeholder="Last Name" ng-model="ctrl.lastName"/>
+  <input type="text" placeholder="Image URL" ng-model="ctrl.image"/>
+  <input type="text" placeholder="Location" ng-model="ctrl.location"/>
+  <input type="submit" value="Create Account">
 </form>

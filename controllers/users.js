@@ -13,4 +13,13 @@ router.post('/', (req, res)=>{
   })
 })
 
+router.put('/', (req, res)=>{
+  User.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedUser)=>{
+    res.status(201).json({
+      status: 201,
+      message: 'User Updated'
+    })  
+  })
+})
+
 module.exports = router;

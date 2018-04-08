@@ -1,0 +1,9 @@
+<h1>Edit Profile</h1>
+<form ng-submit="ctrl.editUser()">
+  <input type="text" value="{{ctrl.currentUser.username}}" ng-model="ctrl.username"/>
+  <input type="text" value="{{ctrl.currentUser.firstName}}" ng-model="ctrl.firstName"/>
+  <input type="text" value="{{ctrl.currentUser.lastName}}" ng-model="ctrl.lastName"/>
+  <input type="text" value="{{ctrl.currentUser.image}}" ng-model="ctrl.image"/>
+  <input type="text" value="{{ctrl.currentUser.location}}" ng-model="ctrl.location"/>
+  <input ng-click="ctrl.changeInclude('home')" type="submit" value="Edit">
+</form>

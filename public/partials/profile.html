@@ -1,4 +1,4 @@
-<div class="profile">
-
-  <h3>{{ctrl.currentUser.username}}</h3>
-</div>
+<h3>{{ctrl.currentUser.username}} <button ng-click="ctrl.changeInclude('editprofile')">Edit</button></h3>
+<img ng-src="{{ctrl.currentUser.image}}">
+<h5>{{ctrl.currentUser.firstName}} {{ctrl.currentUser.lastName}}</h5>
+<h5>{{ctrl.currentUser.location}}</h5>

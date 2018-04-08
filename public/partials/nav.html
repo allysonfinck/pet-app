@@ -10,18 +10,18 @@
         <a class="nav-link" ng-click="ctrl.changeInclude('home')">Home <span class="sr-only">(current)</span></a>
       </li>
       <li ng-if="ctrl.currentUser" class="nav-item">
+        <a class="nav-link disabled" href="#">Welcome, {{ctrl.currentUser.username}}</a>
+      </li>
+      <li ng-if="ctrl.currentUser" class="nav-item">
         <a ng-click="ctrl.changeInclude('profile')" class="nav-link" href="#">Profile</a>
       </li>
       <li ng-if="ctrl.currentUser" class="nav-item">
-        <a class="nav-link disabled" href="#">Welcome, {{ctrl.currentUser}}</a>
+        <a ng-click="ctrl.logOut(); ctrl.changeInclude('home')" class="nav-link">Logout</a>
       </li>
-      <li ng-if="ctrl.currentUser" class="nav-item">
-        <a ng-click="ctrl.logOut()" class="nav-link">Logout</a>
-      </li>
-      <li class="nav-item">
+      <li ng-if="!ctrl.currentUser" class="nav-item">
         <a ng-click="ctrl.changeInclude('signup')" class="nav-link">Signup</a>
       </li>
-      <li class="nav-item">
+      <li ng-if="!ctrl.currentUser" class="nav-item">
         <a ng-click="ctrl.changeInclude('home'); ctrl.changeInclude('login')" class="nav-link">Login</a>
       </li>
     </ul>

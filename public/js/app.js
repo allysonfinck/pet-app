@@ -83,13 +83,35 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
         url: '/users',
         data: {
           username: this.username,
-          password: this.password
+          password: this.password,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          image: this.image,
+          location: this.location
         }
       }).then(function(response){
         console.log(response);
       }, function(){
         console.log('error');
       });
+    }
+
+    this.editUser = function(){
+      $http({
+        method: 'PUT',
+        url: '/users',
+        data: {
+          username: this.username,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          image: this.image,
+          location: this.location
+        }
+      }).then(function(response){
+        console.log(response.data);
+      }, function(){
+        console.log('error');
+      })
     }
 
     this.logIn = function(){
@@ -102,7 +124,8 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
         }
       }).then(function(response){
         controller.loggedinUsername = response.data.loginUsername;
-        controller.currentUser = controller.loggedinUsername;
+        controller.currentUser = response.data.message;
+        console.log(controller.currentUser);
         console.log(response);
       }, function(){
         console.log('error');
