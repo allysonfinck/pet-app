@@ -17,6 +17,7 @@
     <!-- INCLUDES -->
   <div ng-include="'partials/nav.html'"></div>
 
+
   <div class="container">
     <div class="header">
       <img src="https://i.imgur.com/nTGswxr.jpg" alt="pets" width="100%">
@@ -25,7 +26,7 @@
         <button id="openModal"> Login / Register </a>
       </div>
 
-      <div class="form">
+      <!-- <div class="form">
         <form name="getPets" ng-submit="ctrl.getPets()">
           <input type="text" placeholder="Zip" ng-model="ctrl.location"/>
           <input type="text" placeholder="Pet" ng-model="ctrl.animal"/>
@@ -35,8 +36,10 @@
           <input class="ageSearch" type="text" placeholder="Age(Baby/Young/Adult/Senior)" ng-model="ctrl.age"/>
           <button class="searchBtn" type="submit">SEARCH</button>
         </form>
-      </div>
+      </div> -->
   <nav>
+
+    <div ng-include="ctrl.include"></div>
 
 <!-- modal -->
 <div id="modal">
@@ -67,7 +70,7 @@
     </nav>
 
 
-    <h1 class="petGridTitle">Available Pets</h1>
+    <!-- <h1 class="petGridTitle">Available Pets</h1>
     <div class="petGrid">
       <div ng-repeat="pet in ctrl.pets" class="petCard">
         <img ng-src="{{pet.media.photos.photo[0].$t}}" alt="{{pet.name.$t}}">
@@ -76,7 +79,7 @@
         <h4>Age: {{pet.age.$t}}</h4>
         <h4>Size: {{pet.size.$t}}</h3>
         <h4>Gender: {{pet.sex.$t}}</h4>
-      </div>
+      </div> -->
 
     </div>
 
