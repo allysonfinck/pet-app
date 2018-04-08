@@ -7,11 +7,12 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
   this.baseURL = 'http://api.petfinder.com/pet.find?key=d9f0af5e7a062cb5c0fec14bb266231b&location=10940';
   this.currentUser = "";
 
+  // INCLUDES
   this.include = 'partials/home.html';
   this.changeInclude = (page)=>{
     this.include = 'partials/' + page + '.html';
   }
-  
+
   // SEARCH FOR PETS
   this.getPets = function(){
     let url = 'https://api.petfinder.com/pet.find?key=9ea203268b6ec8547b6ba71eb1241987&format=json';
@@ -101,7 +102,7 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
         }
       }).then(function(response){
         controller.loggedinUsername = response.data.loginUsername;
-        this.currentUser = response.config.data.username;
+        controller.currentUser = controller.loggedinUsername;
         console.log(response);
       }, function(){
         console.log('error');
