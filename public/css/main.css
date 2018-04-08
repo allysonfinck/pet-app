@@ -1,7 +1,11 @@
+* {
+  background-image: url(/img/ep_naturalwhite.png);
+}
+
 body {
-  background-color: #f8f9fa;
-  font-family: 'Lobster', cursive;
+  /* background-color: #f8f9fa; */
   color: black;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 
@@ -23,6 +27,7 @@ body {
 }
 
 .header {
+
   position: relative;
   text-align: center;
   color: black;
@@ -33,6 +38,7 @@ body {
 .headerImg {
   width: 100%;
   height: auto;
+  border-radius: 25px;
 }
 
 .tagline {
@@ -150,6 +156,7 @@ input {
 
 .showPage img {
   margin: 20px auto;
+  border: solid black 2px;
 }
 
 .infoBox {
@@ -176,4 +183,10 @@ footer {
   display: block;
   margin: 0 auto;
   text-align: center;
+}
+
+/* NAV BAR */
+.navbar {
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
 }
