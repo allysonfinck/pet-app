@@ -18,27 +18,27 @@ We used the official Petfinder API which proved to be the biggest challenge of t
 
 
 __Approach__
-#Technologies Used:
+# Technologies Used:
 HTML
 CSS
 JavaScript
 
-##MEAN STACK
+## MEAN STACK
 Node.js
 MongoDB
 Express
 Angular
 
-##NODE DEPENDENCIES
+## NODE DEPENDENCIES
 Bcrypt
 Mongoose
 
-##OTHER
+## OTHER
 jQuery
 Petfinder API
 
 __WIRE FRAMING__
 
-!(img/wireframe.jpg)
+![](img/wireframe.jpg)
 
 __UNSOLVED PROBLEMS__
