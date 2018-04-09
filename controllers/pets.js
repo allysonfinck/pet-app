@@ -8,4 +8,10 @@ router.get('/', (req, res)=>{
   })
 })
 
+router.post('/', (req, res)=>{
+  Pets.create(req.body, (err, createdPets)=>{
+    res.json(createdPets);
+  })
+})
+
 module.exports = router;

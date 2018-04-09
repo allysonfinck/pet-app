@@ -2,7 +2,9 @@
 
   <img ng-src="{{ctrl.currentPet.media.photos.photo[2].$t}}" alt="{{pet.name.$t}}">
 
-  <h1>{{ctrl.currentPet.name.$t}}</h1><button>SAVE</button>
+  <h1>{{ctrl.currentPet.name.$t}}</h1>
+
+  <button ng-click="ctrl.addPet(currentPet); ctrl.changeInclude('profile', pet)">SAVE</button>
 
   <h4>{{ctrl.currentPet.breeds.breed.$t}}</h4>
   <h5>{{ctrl.currentPet.description.$t}}</h5>

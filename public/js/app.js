@@ -11,10 +11,8 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
   // INCLUDES
   this.include = 'partials/home.html';
   this.changeInclude = (page, pet)=>{
-    console.log(this.pets);
     this.currentPet = pet;
     this.include = 'partials/' + page + '.html';
-    console.log(this.currentPet);
   }
 
   // SEARCH FOR PETS
@@ -77,6 +75,40 @@ app.controller('MainController', ['$http', '$sce', function($http, $sce){
       .then(function(response){
         console.log(response.data.petfinder.pets.pet);
         controller.pets = response.data.petfinder.pets.pet;
+      })
+    }
+
+    this.getMyPets = function(){
+      $http({
+        method: 'GET',
+        url: '/pets'
+      }).then(function(response){
+        this.myPets = response.data;
+      }, function(error){
+        console.log('error');
+      })
+    }
+
+    this.addPet = function(currentPet){
+      $http({
+        method: 'POST',
+        url: '/pets',
+        data: {
+          name: currentPet.name,
+          animal: currentPet.animal,
+          breed: currentPet.breed,
+          size: currentPet.size,
+          sex: currentPet.sex,
+          location: currentPet.address,
+          age: currentPet.age
+        }
+      }).then(function(response){
+        console.log(response.data);
+        this.myPets.push(response.data);
+        this.getMyPets();
+        console.log(this.myPets);
+      }, function(error){
+        console.log('error');
       })
     }
 
