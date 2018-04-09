@@ -19,26 +19,26 @@ We used the official Petfinder API which proved to be the biggest challenge of t
 
 __Approach__
 ## Technologies Used:
-HTML
-CSS
-JavaScript
+* HTML
+* CSS
+* JavaScript
 
 ## MEAN STACK
-Node.js
-MongoDB
-Express
-Angular
+* Node.js
+* MongoDB
+* Express
+* Angular
 
 ## NODE DEPENDENCIES
-Bcrypt
-Mongoose
+* Bcrypt
+* Mongoose
 
 ## OTHER
-jQuery
-Petfinder API
-Bootstrap
-Google fonts
-Subtle Patterns - (https://www.toptal.com/designers/subtlepatterns/)
+* jQuery
+* Petfinder API
+* Bootstrap
+* Google fonts
+* Subtle Patterns (https://www.toptal.com/designers/subtlepatterns/)
 
 __WIRE FRAMING__
 
@@ -46,4 +46,4 @@ __WIRE FRAMING__
 
 __UNSOLVED PROBLEMS__
 
-The final problem that we were unable to solve was allowing users to add pets to their profile page.
+The final problem that we were unable to solve was allowing users to add pets to their profile page. 
