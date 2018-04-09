@@ -39,6 +39,8 @@ Petfinder API
 
 __WIRE FRAMING__
 
-![](img/wireframe.jpg)
+![](https://i.imgur.com/1hDXBYk.jpg)
 
 __UNSOLVED PROBLEMS__
+
+The final problem that we were unable to solve was allowing users to add pets to their profile page.
