@@ -1,10 +1,10 @@
+# pet-app
+
 __General Assembly | Web Development Immersive__
 
 Unit 3 | MEAN Stack - Group Project
 
 by Allyson Finck and Natalie Wolff
-
-# pet-app
 
 Deployed at: https://thepetproject.herokuapp.com/
 
@@ -18,7 +18,7 @@ We used the official Petfinder API which proved to be the biggest challenge of t
 
 
 __Approach__
-# Technologies Used:
+## Technologies Used:
 HTML
 CSS
 JavaScript
@@ -36,6 +36,9 @@ Mongoose
 ## OTHER
 jQuery
 Petfinder API
+Bootstrap
+Google fonts
+Subtle Patterns - (https://www.toptal.com/designers/subtlepatterns/)
 
 __WIRE FRAMING__
 
